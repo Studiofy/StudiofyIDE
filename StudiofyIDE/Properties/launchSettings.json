@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "StudiofyIDE (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "StudiofyIDE (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
