@@ -239,7 +239,7 @@ namespace StudiofyIDE
             string Current = Windows.ApplicationModel.Package.Current.Id.Version.Major.ToString() + "."
                         + Windows.ApplicationModel.Package.Current.Id.Version.Minor.ToString() + "."
                         + Windows.ApplicationModel.Package.Current.Id.Version.Build.ToString() + "."
-                        + Revision + "-canary";
+                        + Revision + "-Canary";
             try
             {
                 IReadOnlyList<Release> Release = await GitClient.Repository.Release.GetAll("Studiofy", "StudiofyIDE");

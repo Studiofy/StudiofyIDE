@@ -38,7 +38,7 @@ namespace StudiofyIDE.Core.Services
             switch (version)
             {
                 case Version.Canary:
-                    VERSION_IDENTIFIER = VERSION_SEPARATOR + "canary";
+                    VERSION_IDENTIFIER = VERSION_SEPARATOR + "Canary";
                     break;
                 case Version.Beta:
                     VERSION_IDENTIFIER = VERSION_SEPARATOR + "beta";
