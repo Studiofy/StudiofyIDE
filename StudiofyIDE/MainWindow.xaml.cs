@@ -235,17 +235,17 @@ namespace StudiofyIDE
         private async Task GetUpdates()
         {
             GitHubClient GitClient = new(new ProductHeaderValue("StudiofyIDE"));
-            string Revision = Windows.ApplicationModel.Package.Current.Id.Version.Revision.ToString();
             string Current = Windows.ApplicationModel.Package.Current.Id.Version.Major.ToString() + "."
                         + Windows.ApplicationModel.Package.Current.Id.Version.Minor.ToString() + "."
                         + Windows.ApplicationModel.Package.Current.Id.Version.Build.ToString() + "."
-                        + Revision + "-Canary";
+                        + Windows.ApplicationModel.Package.Current.Id.Version.Revision.ToString() + "-Canary";
             try
             {
                 IReadOnlyList<Release> Release = await GitClient.Repository.Release.GetAll("Studiofy", "StudiofyIDE");
                 Release Latest = Release[0];
-                if (Latest.TagName.EndsWith("-Canary") && Latest.TagName != Current)
+                if (!Latest.TagName.EndsWith("v" + Current))
                 {
+                    Debug.WriteLine(Latest.TagName.EndsWith("v" + Current) ? Latest.TagName.Replace("-Canary", "") : "v" + Current);
                     ContentDialog updateDialog = new()
                     {
                         Title = "Studiofy IDE (Canary) Update is Available!",

@@ -41,10 +41,10 @@ namespace StudiofyIDE.Core.Services
                     VERSION_IDENTIFIER = VERSION_SEPARATOR + "Canary";
                     break;
                 case Version.Beta:
-                    VERSION_IDENTIFIER = VERSION_SEPARATOR + "beta";
+                    VERSION_IDENTIFIER = VERSION_SEPARATOR + "Beta";
                     break;
                 case Version.Official:
-                    VERSION_IDENTIFIER = VERSION_SEPARATOR + "official";
+                    VERSION_IDENTIFIER = VERSION_SEPARATOR + "Official";
                     break;
             }
         }
