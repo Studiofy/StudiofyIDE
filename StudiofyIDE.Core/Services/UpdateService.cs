@@ -64,7 +64,7 @@ namespace StudiofyIDE.Core.Services
                 var Releases = await GitClient.Repository.Release.GetAll("Studiofy", "StudiofyIDE");
                 foreach (var Release in Releases)
                 {
-                    var TagName = Release.TagName.Replace("-canary", "");
+                    var TagName = Release.TagName.Replace("-Canary", "");
                     string[] versionParts = TagName.Split('.');
                     LATEST_VERSION_MAJOR = int.Parse(versionParts[0]);
                     LATEST_VERSION_MINOR = int.Parse(versionParts[1]);

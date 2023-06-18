@@ -244,11 +244,11 @@ namespace StudiofyIDE
             {
                 IReadOnlyList<Release> Release = await GitClient.Repository.Release.GetAll("Studiofy", "StudiofyIDE");
                 Release Latest = Release[0];
-                if (Latest.TagName.EndsWith("-canary") && Latest.TagName != Current)
+                if (Latest.TagName.EndsWith("-Canary") && Latest.TagName != Current)
                 {
                     ContentDialog updateDialog = new()
                     {
-                        Title = "StudiofyIDE Canary Update is Available!",
+                        Title = "Studiofy IDE (Canary) Update is Available!",
                         Content = "Would you like to Update now?",
                         PrimaryButtonText = "Yes, Update Now",
                         SecondaryButtonText = "No, Maybe Later",
@@ -315,7 +315,7 @@ namespace StudiofyIDE
                             HttpResponseMessage response = httpClient.GetAsync(url).Result;
                             Stream content = response.Content.ReadAsStreamAsync().Result;
                             string TempPath = Path.GetTempPath();
-                            string fileName = "Canary Update.msix";
+                            string fileName = "SIDECanaryUpdate.msix";
                             string filePath = Path.Combine(TempPath, fileName);
 
                             bool IsFileAlreadyAvailable = File.Exists(filePath);
@@ -353,8 +353,8 @@ namespace StudiofyIDE
                 {
                     ContentDialog confirmDialog = new()
                     {
-                        Title = "Windows Code Studio Canary is Up-to-Date",
-                        Content = "You are using the latest version of Windows Code Studio Canary",
+                        Title = "Studiofy IDE (Canary) is Up-to-Date",
+                        Content = "You are using the latest version of Studiofy IDE (Canary)",
                         CloseButtonText = "OK",
                         DefaultButton = ContentDialogButton.Close,
                         XamlRoot = Content.XamlRoot
